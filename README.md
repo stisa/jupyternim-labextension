@@ -1,11 +1,11 @@
 # jupyternim-labextension
-Jupyter lab extension for nim/jupyternim.  
-Provides syntax highlighting in Jupyter Lab codemirror editor for nim files.
 
-## Installation
+A Jupyter Lab extension to provide syntax highlight for Nim and Jupyternim.
+
+### Installation
 
 ```bash
-jupyter labextension install nim_labextension
+jupyter labextension install jupyternim-labextension
 ```
 
 ## Development
@@ -13,15 +13,24 @@ jupyter labextension install nim_labextension
 For a development install (requires npm version 4 or later), do the following in the repository directory:
 
 ```bash
+# Clone the repo to your local environment
+cd jupyternim-labextension
+# Install dependencies
 npm install
-npm run build
-jupyter labextension link .
+# Install your development version of the extension
+jupyter labextension install .
 ```
 
-To rebuild the package and the JupyterLab app:
+You can run JupyterLab in watch mode to watch for changes in the extension's source and automatically rebuild.
 
 ```bash
-npm run build
-jupyter lab build
+# Run jupyterlab in watch mode
+jupyter lab --watch
+```
+
+### Uninstall
+
+```bash
+jupyter labextension uninstall jupyternim-labextension
 ```
 
