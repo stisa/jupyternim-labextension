@@ -1,8 +1,9 @@
 # jupyternim-labextension
 
-A Jupyter Lab extension to provide syntax highlight for Nim and Jupyternim.
+A Jupyter Lab extension to provide syntax highlight for [Nim](https://nim-lang.org/) and [Jupyternim](https://github.com/stisa/jupyternim).
 
 ### Installation
+Prereqs: `jupyter lab`
 
 ```bash
 jupyter labextension install jupyternim-labextension
