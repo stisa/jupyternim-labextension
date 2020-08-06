@@ -10,7 +10,9 @@
     "target": "es2015",
     "outDir": "./lib",
     "lib": ["dom", "es2015"],
-    "types": []
+    "types": [
+      "codemirror"
+    ]
   },
   "include": ["src/*"]
 }

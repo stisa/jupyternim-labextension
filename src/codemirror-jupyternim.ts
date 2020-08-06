@@ -1,9 +1,7 @@
 import * as CodeMirror from 'codemirror';
-
-import 'codemirror/lib/codemirror';
-
+import 'codemirror/mode/meta';
 // CodeMirror mode taken from PMunch https://github.com/PMunch/nim-playground-frontend
-CodeMirror.defineMode("nim", function(conf, parserConf) {
+CodeMirror.defineMode("nim", function(conf: CodeMirror.EditorConfiguration, parserConf?: any): CodeMirror.Mode<any> {
   var ERRORCLASS = 'error';
 
   function wordRegexp(words) {
@@ -357,8 +355,8 @@ CodeMirror.defineMode("nim", function(conf, parserConf) {
     return style;
   }
 
-  var external = {
-    startState: function(basecolumn) {
+  return {
+    startState: function(basecolumn?: number) {
       return {
         tokenize: tokenBase,
         scopes: [{offset:basecolumn || 0, type:'nim'}],
@@ -369,7 +367,7 @@ CodeMirror.defineMode("nim", function(conf, parserConf) {
       };
     },
 
-    token: function(stream, state) {
+    token: function(stream: CodeMirror.StringStream, state):string {
       var style = tokenLexer(stream, state);
 
       state.lastStyle = style;
@@ -394,10 +392,8 @@ CodeMirror.defineMode("nim", function(conf, parserConf) {
     lineComment: "#",
     blockCommentStart: "#[",
     blockCommentEnd: "]#",
-    fold: "indent"
+    //fold: "indent"
   };
-
-  return external;
 });
 
 CodeMirror.defineMIME("text/x-nim", "nim");
